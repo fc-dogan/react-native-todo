@@ -10,6 +10,11 @@
       "StackName": "amplify-todoreactnativeauth-dev-153523",
       "StackId": "arn:aws:cloudformation:us-east-2:034386890658:stack/amplify-todoreactnativeauth-dev-153523/b64aca30-18a4-11eb-aebc-02b28f38529c",
       "AmplifyAppId": "d1htm3p7qz1wfr"
+    },
+    "categories": {
+      "auth": {
+        "todoreactnativeauth9d98bf1c": {}
+      }
     }
   }
 }
