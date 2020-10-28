@@ -4,8 +4,10 @@ import {
 } from 'react-native'
 
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
-import { createTodo } from './src/graphql/mutations'
-import { listTodos } from './src/graphql/queries'
+import { withAuthenticator } from 'aws-amplify-react-native'
+
+import { createTodo } from './graphql/mutations'
+import { listTodos } from './graphql/queries'
 
 import config from './aws-exports'
 Amplify.configure(config)
@@ -77,4 +79,10 @@ const styles = StyleSheet.create({
   todoName: { fontSize: 18 }
 })
 
-export default App
+export default withAuthenticator(App, {
+  signUpConfig: {
+    hiddenDefaults: ["phone_number"],
+    signUpFields: [
+      { label: "Name", key: "name", required: true, type: "string" }
+    ]
+}});
