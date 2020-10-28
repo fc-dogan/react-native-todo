@@ -15,6 +15,13 @@ const signUpConfig = {
   defaultCountryCode: '1',
   signUpFields: [
     {
+      label: 'Username',
+      key: 'username',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    },
+    {
       label: 'Email',
       key: 'email',
       required: true,

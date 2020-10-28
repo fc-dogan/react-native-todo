@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, TextInput, Button
 } from 'react-native'
 
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Auth} from 'aws-amplify'
 import { createTodo } from '../graphql/mutations'
 import { listTodos } from '../graphql/queries'
 
@@ -39,6 +39,15 @@ function ToDo() {
       console.log('error creating todo:', err)
     }
   }
+
+
+    async function signOut() {
+        try {
+            await Auth.signOut();
+        } catch (error) {
+            console.log('error signing out: ', error);
+        }
+    }
 
   return (
       <View >
