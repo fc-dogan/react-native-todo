@@ -40,7 +40,6 @@ function ToDo() {
     }
   }
 
-
     async function signOut() {
         try {
             await Auth.signOut();
@@ -51,6 +50,7 @@ function ToDo() {
 
   return (
       <View >
+         <Button title="Sign out" onPress={signOut} />
         <TextInput
           onChangeText={val => setInput('name', val)}
           style={styles.input}
